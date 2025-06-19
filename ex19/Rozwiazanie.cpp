@@ -13,7 +13,7 @@ struct Box : Obj{
     explicit Box(T _val) : val(_val){}
 
     void Draw() const override{
-        std::cout << __PRETTY_FUNCTION__ << " [with T = " << (std::is_same_v<T, int> ? "int" : "double") << "] --> " << val << std::endl;
+        std::cout << __PRETTY_FUNCTION__  << " --> " << val << std::endl;
     }
 
     operator T() const{ return val; }
@@ -26,7 +26,7 @@ struct Box<Box<T>> : Obj{
     explicit Box(T _val) : val(_val){}
 
     void Draw() const override{
-        std::cout << __PRETTY_FUNCTION__ << " [with T = " << (std::is_same_v<T, int> ? "int" : "double") << "] --> " << val << std::endl;
+        std::cout << __PRETTY_FUNCTION__  << " --> " << val << std::endl;
     }
 
     operator Box<T>() const{ return val; }
